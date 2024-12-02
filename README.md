@@ -2,7 +2,8 @@
 
 ![image](https://github.com/user-attachments/assets/31e54076-cd69-4c57-a7b9-22a8ad10c654)
 
-<p>WikiSage is an AI companion plugin for TiddlyWiki that leverages multiple language models (OpenAI's GPT and o1 models and Anthropic's Claude) to enhance your wiki experience.</p>
+WikiSage is an AI companion plugin for [TiddlyWiki](https://tiddlywiki.com) that leverages multiple language models (OpenAI's GPT and o1 models and Anthropic's Claude) to enhance your wiki experience.
+
 
 <h2>Features</h2>
 <ul>
@@ -18,7 +19,7 @@
 
 <h2>Installation</h2>
 <ol>
-    <li>Install [theplugin](./WikiSage.tid) in your TiddlyWiki</li>
+    <li>Install <a href="https://github.com/well-noted/WikiSage/raw/main/WikiSage.tid">WikiSage</a> in your TiddlyWiki.</li>
     <li>Add your API keys:
         <ul>
             <li>OpenAI API key in <code>$:/plugins/NoteStreams/WikiSage/openai-api-key</code></li>
