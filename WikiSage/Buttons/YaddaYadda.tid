@@ -1,0 +1,12 @@
+caption: Yadda-yadda
+condition: [<targetTiddler>type[]] [<targetTiddler>type[text/vnd.tiddlywiki]]
+created: 20241027135818259
+description: Make an OpenAI API call to complete the sentence, given existing content
+dropdown: $:/Notestreams/Expanded-ChatGPT/YaddaYaddaDropdown
+icon: $:/core/images/edit-button
+modified: 20241202144643023
+shortcuts: ((yadda-yadda))
+tags: $:/tags/EditorToolbar
+title: $:/plugins/NoteStreams/WikiSage/Buttons/YaddaYadda
+type: text/vnd.tiddlywiki
+

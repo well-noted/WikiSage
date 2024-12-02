@@ -1,0 +1,39 @@
+caption: config
+created: 20241202020532224
+modified: 20241202150626320
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/config
+type: text/vnd.tiddlywiki
+
+
+
+; <$text text="OpenAI" /> API Key
+: <$edit-text tiddler="$:/plugins/NoteStreams/WikiSage/openai-api-key" tag="input" default="" />
+: You should register your <$text text="OpenAI" /> account and request an [[API Key|https://platform.openai.com/account/api-keys]].
+
+; <$text text="Anthropic" /> API Key
+: <$edit-text tiddler="$:/plugins/NoteStreams/WikiSage/anthropic-api-key" tag="input" default="" />
+: You should register your <$text text="Anthropic" /> account and request an [[API Key|https://www.anthropic.com/api]].
+
+
+
+
+''Custom instructions:'' <br><br>
+<$edit-text tiddler="$:/plugins/Notestreams/Expanded-Chat-GPT/User-instructions" tag="textarea" class="custom-textarea" default=""/>
+<br>
+Use this space to provide custom instructions that you want sent alongside your query each time you prompt. 
+
+
+
+''Model List:'' <br><br>
+<$edit-text tiddler="$:/plugins/Notestreams/Expanded-ChatGPT/model-list" tag="textarea" class="custom-textarea" default=""/>
+<br>
+Please add model names from the available API lists to this, 1 per line. 
+
+<style>
+.custom-textarea {
+    width: 500px;
+    min-height: 200px;
+}
+</style>
+

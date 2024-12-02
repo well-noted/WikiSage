@@ -1,0 +1,208 @@
+Modern.TiddlyDev#Origin: style.css
+created: 20241020191843905
+modified: 20241202141103446
+tags: $:/tags/Stylesheet
+title: $:/plugins/NoteStreams/WikiSage/chatgpt-widget.css
+type: text/css
+
+.record-button {
+    padding: 4px;
+    margin-right: 4px;
+    transition: all 0.3s ease;
+}
+
+.record-button.recording {
+    background-color: #ff4444;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.chat-box .image-picker-container {
+    margin-bottom: 10px;
+}
+
+.chat-box .image-selector {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.chat-input {
+    flex: 1 1 200px;
+    min-height: 50px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+    overflow: auto;
+}
+
+.chat-button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.chat-button {
+    height: 40px;
+    min-width: 80px;
+    font-size: 16px;
+    padding: 0 15px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+	  background-color: #515151;
+}
+
+.chat-button:hover {
+    background-color: #ebdcdc;
+}
+
+.clear-history {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}
+
+.clear-history:hover {
+    background-color: #d32f2f;
+}
+
+@media (max-width: 600px) {
+    .chat-box-container {
+        flex-direction: column;
+    }
+    
+    .chat-input {
+        width: 100%;
+    }
+    
+    .chat-button-container {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+.chat-box .image-preview {
+    margin-top: 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.chat-box .image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.chat-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.chat-interface-container .conversations {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.chat-interface-container .conversations-scroll {
+    height: 0;
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.chat-interface-container .chat-box {
+    width: 100%;
+    display: flex;
+    border: 1.5px solid #888a;
+    border-radius: 5px;
+    background: #8881;
+}
+
+.chat-interface-container .chat-input {
+    flex-grow: 1;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.chat-interface-container .chat-button {
+    height: 45px;
+    min-width: 45px;
+    font-size: 14px;
+    padding: 0 10px;
+}
+
+.chat-interface-container .chatgpt-conversation {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-interface-container .chatgpt-conversation-assistant {
+    background-image: linear-gradient(0deg, #8883, #8883);
+}
+
+.chat-interface-container .chatgpt-conversation-error .chatgpt-conversation-assistant {
+    color: red;
+}
+
+.chat-interface-container .chatgpt-conversation-user {
+    font-weight: 750;
+}
+
+.chat-interface-container .chatgpt-conversation-message {
+    padding: 10px 20px;
+}
+
+.chat-interface-container .clear-history {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.chat-interface-container .clear-history:hover {
+    background-color: #d32f2f;
+}
+
+.model-selector {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: black;
+  cursor: pointer;
+}
+
+.model-selector:hover {
+  border-color: #888;
+}
+
+.model-selector:focus {
+  outline: none;
+  border-color: #666;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.model-selector-container {
+    position: relative;
+    display: inline-block;
+}
+
+.model-selector-button:hover {
+    background-color: #f8f8f8;
+}
+
+.model-list li:hover {
+    background-color: #f0f0f0;
+}

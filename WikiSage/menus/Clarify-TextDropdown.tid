@@ -1,0 +1,12 @@
+created: 20241027143053522
+modified: 20241202144724537
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/menus/Clarify-TextDropdown
+type: text/vnd.tiddlywiki
+
+Edit the existing content for clarity
+<br><br>
+<$button actions="""<<clarify-content>>""">
+Make API Call
+</$button><br>^^This will be a paid API call!<br><br>
+{{$:/HistoryList!!current-tiddler}}

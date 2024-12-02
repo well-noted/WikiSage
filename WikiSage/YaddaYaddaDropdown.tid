@@ -1,0 +1,12 @@
+created: 20241027141540254
+modified: 20241202144601154
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/YaddaYaddaDropdown
+type: text/vnd.tiddlywiki
+
+Autocomplete your sentence with ChatGPT
+<br><br>
+<$button actions="""<<yadda-yadda>>""">
+Make API Call
+</$button><br>^^This will be a paid API call!<br><br>
+{{$:/HistoryList!!current-tiddler}}

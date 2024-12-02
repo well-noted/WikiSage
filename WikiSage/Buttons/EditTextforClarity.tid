@@ -1,0 +1,11 @@
+caption: Edit Text for Clarity
+condition: [<targetTiddler>type[]] [<targetTiddler>type[text/vnd.tiddlywiki]]
+created: 20241027143259217
+description: Make an OpenAI API call to edit the existing content for clarity
+dropdown: $:/Notestreams/Expanded-ChatGPT/Clarify-TextDropdown
+icon: $:/core/images/storyview-classic
+modified: 20241202144753118
+tags: $:/tags/EditorToolbar
+title: $:/plugins/NoteStreams/WikiSage/Buttons/EditTextforClarity
+type: text/vnd.tiddlywiki
+
