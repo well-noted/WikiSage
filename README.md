@@ -18,7 +18,7 @@
 
 <h2>Installation</h2>
 <ol>
-    <li>Install [[the plugin|$:/plugins/NoteStreams/WikiSage]] in your TiddlyWiki</li>
+    <li>Install [theplugin](./WikiSage.tid) in your TiddlyWiki</li>
     <li>Add your API keys:
         <ul>
             <li>OpenAI API key in <code>$:/plugins/NoteStreams/WikiSage/openai-api-key</code></li>
