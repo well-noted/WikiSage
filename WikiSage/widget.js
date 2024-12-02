@@ -3,7 +3,7 @@ created: 20241020191728666
 type: application/javascript
 title: $:/plugins/NoteStreams/WikiSage/widget.js
 tags: 
-modified: 20241202153715210
+modified: 20241202162553368
 module-type: widget
 modern.tiddlydev#origin: chatgpt-widget.ts
 \*/
@@ -1788,6 +1788,8 @@ if (isAnthropicModel) {
   let match;
   let processedMessage = message;
 
+   // Add a processing message
+   assistantMessageElement.innerHTML = "Processing...";
 
   const history = this.conversationHistory.get();
   for (const historyItem of history) {
