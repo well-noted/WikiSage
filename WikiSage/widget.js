@@ -3,7 +3,7 @@ created: 20241020191728666
 type: application/javascript
 title: $:/plugins/NoteStreams/WikiSage/widget.js
 tags: 
-modified: 20241202162553368
+modified: 20241203014620512
 module-type: widget
 modern.tiddlydev#origin: chatgpt-widget.ts
 \*/
@@ -1433,9 +1433,10 @@ if (this.enableTTS) {
 chatBox.appendChild(input);
 chatBox.appendChild(buttonContainer);
 
-    clearButton.onclick = () => {
-       this.conversationHistory.clear();
-    };
+clearButton.onclick = () => {
+  this.clearChatHistory(conversationsContainer);
+};
+
 
     let isProcessing = false;
 
@@ -1680,6 +1681,12 @@ async fileToBase64(file) {
       reader.onerror = error => reject(error);
   });
 }
+
+clearChatHistory(conversationsContainer) {
+  $tw.wiki.deleteTiddler(this.historyTiddler);
+  conversationsContainer.innerHTML = '';
+}
+
 
 async fetchChatGPTResponse(apiKey, message, conversationElement) {
   let connection;
