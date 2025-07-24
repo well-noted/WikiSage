@@ -30,10 +30,10 @@ WikiSage is an AI companion plugin for [TiddlyWiki](https://tiddlywiki.com) that
 
 <h2>Usage</h2>
 <p>Basic widget usage:</p>
-<pre><code>&lt;$chat-gpt /&gt;</code></pre>
+<pre><code>&lt;$WikiSage/&gt;</code></pre>
 
 <p>With options:</p>
-<pre><code>&lt;$chat-gpt tiddlerTitle="Context" tts="yes" adversarial="yes" /&gt;</code></pre>
+<pre><code>&lt;$WikiSage tiddlerTitle="Context" tts="yes" adversarial="yes" /&gt;</code></pre>
 
 <h2>Configuration</h2>
 <p>The plugin supports various other configuration options:</p>
