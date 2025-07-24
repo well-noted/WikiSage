@@ -24,7 +24,7 @@ WikiSage is an AI companion plugin for [TiddlyWiki](https://tiddlywiki.com) that
         <ul>
             <li>OpenAI API key in <code>$:/plugins/NoteStreams/WikiSage/openai-api-key</code></li>
             <li>Anthropic API key in <code>$:/plugins/NoteStreams/WikiSage/anthropic-api-key</code></li>
-            <li>Gemini API key in $:/plugins/NoteStreams/WikiSage/gemini-api-key</li>li>
+            <li>Gemini API key in $:/plugins/NoteStreams/WikiSage/gemini-api-key</li>
         </ul>
     </li>
 </ol>
