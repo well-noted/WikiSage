@@ -1,0 +1,22 @@
+title: $:/plugins/NoteStreams/WikiSage/reference-agent-widget
+tags: $:/tags/WikiText/Widget
+caption: Reference Agent
+description: Agent that uses multiple referenced tiddlers and custom instructions
+module: $:/plugins/NoteStreams/WikiSage/tiddlywiki-reference-agent-widget.js
+
+\define reference-agent-widget()
+<$tiddlywiki-reference-agent-widget />
+\end
+
+Allows you to specify multiple tiddler references and custom instructions for an AI agent. The widget also supports generating content to a target tiddler.
+
+Features:
+* Select multiple tiddlers as references for the agent
+* Provide custom instructions for how the agent should use the references
+* Optionally specify a target tiddler where content will be generated
+* Choose whether to append to or overwrite the target tiddler
+* Export conversations to a separate tiddler
+
+```
+<<reference-agent-widget>>
+``` 
