@@ -2974,7 +2974,7 @@ class ChatGPTWidget extends import_widget.widget {
 
             const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             const isAnthropicModel = this.currentModel.startsWith('claude');
-            const userInstructions = $tw.wiki.getTiddlerText("$:/plugins/Notestreams/WikiSage/User-instructions", "").trim();
+            const userInstructions = $tw.wiki.getTiddlerText("$:/plugins/NoteStreams/WikiSage/User-instructions", "").trim();
 
             if (isAnthropicModel) {
                 let fullResponse = "";
