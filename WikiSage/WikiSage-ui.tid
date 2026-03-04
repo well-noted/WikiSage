@@ -1,0 +1,18 @@
+created: 20241016165709382
+modified: 20260223010744754
+tags: $:/rr/pinned Tool
+time-pinned: 20250418173342
+title: $:/plugins/NoteStreams/WikiSage/WikiSage-ui
+type: text/vnd.tiddlywiki
+
+<a href="##chatGPTAnchor"><div style="width: 16px; height: 16px;">{{$:/core/images/chevron-down}}</div></a> <br>
+<$WikiSage tts="no" adversarial="no" tts="no"/>
+<h2 id="#chatGPTAnchor"> </h2>
+
+<style>
+#chatGPTAnchor {
+  padding-top: 80px;
+  margin-top: -80px;
+  display: block;
+}
+</style>

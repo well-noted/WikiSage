@@ -1,0 +1,22 @@
+created: 20250430011232340
+modified: 20260223010744774
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/toggles/code-assist-toggle
+type: text/vnd.tiddlywiki
+
+\define toggleSidebarTag()
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/coding-tool]tag[$:/tags/SideBar]]">
+<$button tooltip="Remove from sidebar" aria-label="Remove from sidebar" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/coding-tool" $tags="-[[$:/tags/SideBar]]"/>
+{{$:/core/images/close-button}}
+</$button>
+</$list>
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/coding-tool]!tag[$:/tags/SideBar]]">
+<$button tooltip="Add to sidebar" aria-label="Add to sidebar" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/coding-tool" $tags="+[[$:/tags/SideBar]]"/>
+{{$:/core/images/new-button}}
+</$button>
+</$list>
+\end
+
+<<toggleSidebarTag>>

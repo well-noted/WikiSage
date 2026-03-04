@@ -1,0 +1,22 @@
+created: 20250430144234079
+modified: 20260223010744787
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/toggles/AI-Button
+type: text/vnd.tiddlywiki
+
+\define togglePageControlsTag()
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/buttons/AI]tag[$:/tags/PageControls]]">
+<$button tooltip="Remove from page controls" aria-label="Remove from page controls" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/buttons/AI" $tags="-[[$:/tags/PageControls]]"/>
+{{$:/core/images/close-button}}
+</$button>
+</$list>
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/buttons/AI]!tag[$:/tags/PageControls]]">
+<$button tooltip="Add to page controls" aria-label="Add to page controls" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/buttons/AI" $tags="+[[$:/tags/PageControls]]"/>
+{{$:/core/images/new-button}}
+</$button>
+</$list>
+\end
+
+<<togglePageControlsTag>>

@@ -1,0 +1,22 @@
+created: 20250530190224597
+modified: 20260223010744735
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/toggles/Notebook-toggle
+type: text/vnd.tiddlywiki
+
+\define toggleViewToolbarTag()
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/Notebook-button]tag[$:/tags/ViewToolbar]]">
+<$button tooltip="Remove from view toolbar" aria-label="Remove from view toolbar" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/Notebook-button" $tags="-[[$:/tags/ViewToolbar]]"/>
+{{$:/core/images/close-button}}
+</$button>
+</$list>
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/Notebook-button]!tag[$:/tags/ViewToolbar]]">
+<$button tooltip="Add to view toolbar" aria-label="Add to view toolbar" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/Notebook-button" $tags="+[[$:/tags/ViewToolbar]]"/>
+{{$:/core/images/new-button}}
+</$button>
+</$list>
+\end
+
+<<toggleViewToolbarTag>>

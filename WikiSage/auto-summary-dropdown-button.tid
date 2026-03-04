@@ -1,0 +1,36 @@
+created: 20250429172701126
+creator: admin
+description: This tiddler defines a "Generate Summary" button for TiddlyWiki that automatically updates the current tiddler's "summary" field with a generated overview of its content. The button, styled with a brain icon from Font Awesome, is designed for easy integration into the toolbar, facilitating quick creation and insertion of summaries within the wiki.
+modified: 20260223010744726
+modifier: admin
+summary: 
+tags: $:/tags/ViewToolbar
+title: $:/plugins/NoteStreams/WikiSage/auto-summary-dropdown-button
+type: text/vnd.tiddlywiki
+
+\define auto-summary-button-actions()
+<$action-setfield $field="summary" $value={{{ [<currentTiddler>subfilter<auto-summary>] }}}/>
+\end
+
+<$button actions=<<auto-summary-button-actions>> tooltip="Generate auto-summary" class="tc-btn-invisible tc-brain-button">
+<span class="fa-brain"></span> Generate Summary
+</$button>
+
+
+<style>
+.fa-brain:before {
+  content: "\f5dc";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tc-brain-button {
+  display: flex;
+  align-items: center;
+}
+
+.tc-brain-button .fa-brain {
+  margin-right: 5px;
+}
+
+</style>

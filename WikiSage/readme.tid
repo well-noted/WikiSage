@@ -1,6 +1,6 @@
 caption: readme
 created: 20241202014923453
-modified: 20241202154558191
+modified: 20260223010744810
 tags: 
 title: $:/plugins/NoteStreams/WikiSage/readme
 type: text/vnd.tiddlywiki
@@ -9,11 +9,11 @@ type: text/vnd.tiddlywiki
 
 {{$:/plugins/NoteStreams/WikiSage/icons/main}}
 
-<p>WikiSage is an AI companion plugin for TiddlyWiki that leverages multiple language models (OpenAI's GPT and O1 models and Anthropic's Claude) to enhance your wiki experience.</p>
+<p>WikiSage is an AI companion plugin for TiddlyWiki that leverages multiple language models (OpenAI's GPT and O models, Google's Gemini, and Anthropic's Claude) to enhance your wiki experience.</p>
 
 <h2>Features</h2>
 <ul>
-    <li>Multi-model support (ChatGPT and Claude)</li>
+    <li>Multi-model support (ChatGPT, Gemini, and Claude)</li>
     <li>PDF analysis and processing (requires anthropic)</li> 
     <li>Image generation (DALL-E 3) and handling</li>
     <li>Voice interaction (speech-to-text and text-to-speech)</li>
@@ -30,16 +30,17 @@ type: text/vnd.tiddlywiki
         <ul>
             <li>OpenAI API key in <code>$:/plugins/NoteStreams/WikiSage/openai-api-key</code></li>
             <li>Anthropic API key in <code>$:/plugins/NoteStreams/WikiSage/anthropic-api-key</code></li>
+<li>Gemini API key in <code>$:/plugins/NoteStreams/WikiSage/gemini-api-key</code></li>
         </ul>
     </li>
 </ol>
 
 <h2>Usage</h2>
 <p>Basic widget usage:</p>
-<pre><code>&lt;$chat-gpt /&gt;</code></pre>
+<pre><code>&lt;$WikiSage/&gt;</code></pre>
 
 <p>With options:</p>
-<pre><code>&lt;$chat-gpt tiddlerTitle="Context" tts="yes" adversarial="yes" /&gt;</code></pre>
+<pre><code>&lt;$WikiSage tiddlerTitle="Context" tts="yes" adversarial="yes" /&gt;</code></pre>
 
 <h2>Configuration</h2>
 <p>The plugin supports various other configuration options:</p>

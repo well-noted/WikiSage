@@ -1,0 +1,32 @@
+created: 20250509214054131
+modified: 20260223010744723
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/beautify-tiddler
+type: text/vnd.tiddlywiki
+
+\define auto-beautify-button-actions()
+<$action-setfield $field="summary" $value={{{ [<currentTiddler>subfilter<beautify-tiddler>] }}}/>
+\end
+
+<$button actions=<<auto-beautify-button-actions>> tooltip="Beautify Tiddler" class="tc-btn-invisible tc-brain-button">
+<span class="fa-brain"></span> Beautify Tiddler
+</$button>
+
+
+<style>
+.fa-brain:before {
+  content: "\f5dc";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tc-brain-button {
+  display: flex;
+  align-items: center;
+}
+
+.tc-brain-button .fa-brain {
+  margin-right: 5px;
+}
+
+</style>

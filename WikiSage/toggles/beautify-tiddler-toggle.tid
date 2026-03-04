@@ -1,0 +1,22 @@
+created: 20250509232355623
+modified: 20260223010744780
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/toggles/beautify-tiddler-toggle
+type: text/vnd.tiddlywiki
+
+\define togglebeautifyViewToolbarTag()
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/beautify-tiddler]tag[$:/tags/ViewToolbar]]">
+<$button tooltip="Remove from view toolbar" aria-label="Remove from view toolbar" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/beautify-tiddler" $tags="-[[$:/tags/ViewToolbar]]"/>
+{{$:/core/images/close-button}}
+</$button>
+</$list>
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/beautify-tiddler]!tag[$:/tags/ViewToolbar]]">
+<$button tooltip="Add to view toolbar" aria-label="Add to view toolbar" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/beautify-tiddler" $tags="+[[$:/tags/ViewToolbar]]"/>
+{{$:/core/images/new-button}}
+</$button>
+</$list>
+\end
+
+<<togglebeautifyViewToolbarTag>>

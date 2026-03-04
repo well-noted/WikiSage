@@ -1,5 +1,8 @@
 /*\
+created: 20250509163146239
 title: $:/plugins/NoteStreams/WikiSage/tiddlywiki-reference-agent-widget.js
+tags: 
+modified: 20260223010744792
 type: application/javascript
 module-type: widget
 \*/
@@ -7,6 +10,7 @@ module-type: widget
 var Widget = require("$:/core/modules/widgets/widget.js").widget;
 const { getGeminiApiUrl } = require("./widget.js");
 const { ConnectionPool } = require("./connection-pool.js");
+const { getLocalChatCompletionUrl, getLocalModelName } = require("./utils.js");
 const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
 const CHAT_COMPLETION_URL = "https://api.openai.com/v1/chat/completions";
 
@@ -27,6 +31,10 @@ function getApiKey(type = 'openai') {
     case 'gemini':
       apiKeyTiddler = "$:/plugins/NoteStreams/WikiSage/gemini-api-key";
       tempApiKeyTiddler = "$:/temp/WikiSage/gemini-api-key";
+      break;
+    case 'local':
+      apiKeyTiddler = "$:/plugins/NoteStreams/WikiSage/local-llm-api-key";
+      tempApiKeyTiddler = "$:/temp/WikiSage/local-llm-api-key";
       break;
     case 'openai':
     default:
@@ -1039,6 +1047,27 @@ Respond directly and helpfully, focusing on the information from the referenced 
           top_p: top_p,
           messages: [{ role: "user", content: systemPrompt }]
         };
+      } else if (model.startsWith("local:")) {
+        const localUrl = getLocalChatCompletionUrl();
+        if (!localUrl) {
+          message.style.color = "#c00";
+          message.textContent = "Local LLM URL is not configured. Set $:/plugins/NoteStreams/WikiSage/local-llm-url";
+          return;
+        }
+        const localApiKey = getApiKey('local');
+        endpoint = localUrl;
+        headers = { "Content-Type": "application/json" };
+        if (localApiKey) {
+          headers["Authorization"] = `Bearer ${localApiKey}`;
+        }
+        body = {
+          model: getLocalModelName(model),
+          temperature: temperature,
+          top_p: top_p,
+          messages: [
+            { role: "system", content: systemPrompt }
+          ]
+        };
       } else {
         const apiKey = getApiKey('openai');
         if (!apiKey) {
@@ -1100,6 +1129,9 @@ Respond directly and helpfully, focusing on the information from the referenced 
         } else {
           throw new Error(data.error?.message || "Anthropic API error.");
         }
+      } else if (model.startsWith("local:")) {
+        if (data.error) throw new Error(data.error.message || "Local LLM API error.");
+        resultContent = data.choices[0].message.content.trim();
       } else {
         if (data.error) throw new Error(data.error.message || "Unknown API error.");
         resultContent = data.choices[0].message.content.trim();

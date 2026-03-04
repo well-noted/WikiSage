@@ -1,0 +1,22 @@
+created: 20250430012450663
+modified: 20260223010744777
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/toggles/clarify-content-toggle
+type: text/vnd.tiddlywiki
+
+\define toggleEditorToolbarTag()
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/Buttons/EditTextforClarity]tag[$:/tags/EditorToolbar]]">
+<$button tooltip="Remove from editor toolbar" aria-label="Remove from editor toolbar" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/Buttons/EditTextforClarity" $tags="-[[$:/tags/EditorToolbar]]"/>
+{{$:/core/images/close-button}}
+</$button>
+</$list>
+<$list filter="[[$:/plugins/NoteStreams/WikiSage/Buttons/EditTextforClarity]!tag[$:/tags/EditorToolbar]]">
+<$button tooltip="Add to editor toolbar" aria-label="Add to editor toolbar" class="tc-btn-invisible">
+<$action-listops $tiddler="$:/plugins/NoteStreams/WikiSage/Buttons/EditTextforClarity" $tags="+[[$:/tags/EditorToolbar]]"/>
+{{$:/core/images/new-button}}
+</$button>
+</$list>
+\end
+
+<<toggleEditorToolbarTag>>

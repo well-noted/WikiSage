@@ -1,0 +1,25 @@
+caption: config
+created: 20250430014613146
+modified: 20260223010744789
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/toggles
+type: text/vnd.tiddlywiki
+
+!! Toggles
+<br> This tiddler allows you to toggle on and off buttons associated with different features of this plugin
+
+<br><br>
+
+''Main Page Control Toggle'' {{$:/plugins/NoteStreams/WikiSage/toggles/AI-Button}}
+
+''Beautify Tiddler Toggle'' {{$:/plugins/NoteStreams/WikiSage/toggles/beautify-tiddler-toggle}}
+
+''Auto Summary Toggle'' {{$:/plugins/NoteStreams/WikiSage/toggles/auto-summary-toggle}}
+
+''Clarify Content Toggle'' {{$:/plugins/NoteStreams/WikiSage/toggles/clarify-content-toggle}}
+
+''Code Assist Toggle'' {{$:/plugins/NoteStreams/WikiSage/toggles/code-assist-toggle}}
+
+''Instruction Dropdown Toggle'' {{$:/plugins/NoteStreams/WikiSage/toggles/Instruct-dropdown-toggle}}
+
+''Yadda-yadda Toggle'' {{$:/plugins/NoteStreams/WikiSage/toggles/yaddayadda-toggle}}

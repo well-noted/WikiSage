@@ -1,0 +1,27 @@
+created: 20241017201341037
+modified: 20260223010744718
+tags: $:/tags/PageControls
+title: $:/plugins/NoteStreams/WikiSage/buttons/AI
+type: text/vnd.tiddlywiki
+
+<$button class="tc-btn-invisible tc-brain-button">
+{{$:/plugins/NoteStreams/WikiSage/Buttons/Brain-Icon}}
+<$action-navigate $to="$:/plugins/NoteStreams/WikiSage/WikiSage-ui"/></$button>
+
+<style>
+.fa-brain:before {
+  content: "\f5dc";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.tc-brain-button {
+  display: flex;
+  align-items: center;
+}
+
+.tc-brain-button .fa-brain {
+  margin-right: 5px;
+}
+
+</style>

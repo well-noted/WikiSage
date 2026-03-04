@@ -1,0 +1,10 @@
+caption: AI Code Assist
+created: 20250430003739621
+list: $:/tags/SideBar
+modified: 20260223010744691
+tags: 
+title: $:/plugins/NoteStreams/WikiSage/coding-tool
+type: text/vnd.tiddlywiki
+
+<$tiddlywiki-coding-widget/>
+{{$:/HistoryList!!current-tiddler}}

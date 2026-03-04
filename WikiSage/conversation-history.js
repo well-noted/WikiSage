@@ -1,9 +1,11 @@
 /*\
 created: 20241116152819418
-tags: 
+creator: admin
 title: $:/plugins/NoteStreams/WikiSage/conversation-history.js
-modified: 20241202141514942
+tags: 
+modified: 20260223010744676
 type: application/javascript
+modifier: admin
 module-type: library
 
 Conversation history management for WikiSage widget
@@ -27,13 +29,32 @@ Conversation history management for WikiSage widget
             } catch (error) {
                 console.error("Error parsing conversation history:", error);
             }
-    
+
+            // Normalize assistantMessage to a plain string. Some models/APIs return
+            // structured content (objects or arrays). Storing a raw object causes
+            // later requests to include an object in `messages[i].content`, which
+            // the OpenAI chat endpoint rejects (expects a string or an array).
+            let assistantText = "";
+            try {
+                if (typeof assistantMessage === 'string') {
+                    assistantText = assistantMessage;
+                } else if (Array.isArray(assistantMessage)) {
+                    assistantText = assistantMessage.map(c => (c && (c.text || c.content)) || (typeof c === 'string' ? c : '')).join('\n');
+                } else if (assistantMessage && typeof assistantMessage === 'object') {
+                    assistantText = assistantMessage.text || assistantMessage.content || (Array.isArray(assistantMessage.parts) ? assistantMessage.parts.join('\n') : JSON.stringify(assistantMessage));
+                } else {
+                    assistantText = String(assistantMessage || '');
+                }
+            } catch (e) {
+                assistantText = String(assistantMessage || '');
+            }
+
             const entry = {
                 id: Date.now().toString(),
                 created: Date.now(),
                 user: userMessage,
-                assistant: this.processAssistantMessage(assistantMessage),
-                isHTML: assistantMessage.includes("<img")
+                assistant: this.processAssistantMessage(assistantText),
+                isHTML: (assistantText && typeof assistantText === 'string') ? assistantText.includes("<img") : false
             };
     
             if (imageData) {

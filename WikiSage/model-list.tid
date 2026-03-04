@@ -1,16 +1,36 @@
 created: 20241031211435105
-modified: 20241202144624975
+creator: admin
+modified: 20260223010744814
+modifier: admin
 tags: 
 title: $:/plugins/NoteStreams/WikiSage/model-list
 type: text/vnd.tiddlywiki
 
+claude-opus-4-20250514
+claude-sonnet-4-20250514
+gemini-2.5-pro-preview-05-06
+gemini-2.5-pro-exp-03-25
+gemini-2.5-flash-preview-04-17
+gpt-5-nano
+gpt-4.1-nano
+gpt-4.1-mini
+gpt-4.1
 gpt-4o-mini
+o4-mini-2025-04-16
+gpt-4o-mini-tts
+gpt-4.5-preview-2025-02-27
+gpt-4.5-preview
+chatgpt-4o-latest
 gpt-4o
 gpt-4
 gpt-3.5-turbo
 gpt-4o-2024-08-06
+gpt-4.5-preview-2025-02-27
 dall-e-3
 o1-preview
 claude-3-opus-20240229
 claude-3-sonnet-20240229
 claude-3-haiku-20240307
+claude-3-5-haiku-latest
+claude-3-5-sonnet-latest
+claude-3-7-sonnet-20250219

@@ -1,6 +1,6 @@
 caption: config
 created: 20241202020532224
-modified: 20241202150626320
+modified: 20260223010744685
 tags: 
 title: $:/plugins/NoteStreams/WikiSage/config
 type: text/vnd.tiddlywiki
@@ -15,8 +15,30 @@ type: text/vnd.tiddlywiki
 : <$edit-text tiddler="$:/plugins/NoteStreams/WikiSage/anthropic-api-key" tag="input" default="" />
 : You should register your <$text text="Anthropic" /> account and request an [[API Key|https://www.anthropic.com/api]].
 
+; <$text text="Gemini" /> API Key
+: <$edit-text tiddler="$:/plugins/NoteStreams/WikiSage/gemini-api-key" tag="input" default="" />
+: You should register your <$text text="Gemini" /> account and request an [[API Key|https://ai.google.dev/gemini-api/docs/api-key]].
 
+---
 
+!! Local LLM
+
+; Base URL
+: <$edit-text tiddler="$:/plugins/NoteStreams/WikiSage/local-llm-url" tag="input" default="" placeholder="e.g. http://192.168.86.81:11434" />
+: The base URL of your local LLM server (Ollama, LM Studio, etc.). Do ''not'' include `/v1/chat/completions` — it is appended automatically.
+
+; API Key //''(optional)''//
+: <$edit-text tiddler="$:/plugins/NoteStreams/WikiSage/local-llm-api-key" tag="input" default="" placeholder="leave blank if not required" />
+: Only needed if your local server requires authentication.
+
+; Supports tool calling
+: <$select tiddler="$:/plugins/NoteStreams/WikiSage/local-llm-supports-tools" default="no">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</$select>
+: Set to ''Yes'' only if your local model supports OpenAI-compatible function/tool calling.
+
+---
 
 ''Custom instructions:'' <br><br>
 <$edit-text tiddler="$:/plugins/Notestreams/Expanded-Chat-GPT/User-instructions" tag="textarea" class="custom-textarea" default=""/>
@@ -26,7 +48,7 @@ Use this space to provide custom instructions that you want sent alongside your 
 
 
 ''Model List:'' <br><br>
-<$edit-text tiddler="$:/plugins/Notestreams/Expanded-ChatGPT/model-list" tag="textarea" class="custom-textarea" default=""/>
+<$edit-text tiddler="$:/plugins/NoteStreams/WikiSage/model-list" tag="textarea" class="custom-textarea" default=""/>
 <br>
 Please add model names from the available API lists to this, 1 per line. 
 

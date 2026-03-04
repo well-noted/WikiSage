@@ -1,0 +1,6 @@
+created: 20250510012212629
+modified: 20260223010744747
+title: $:/plugins/NoteStreams/WikiSage/mindmaps/default
+type: application/json
+
+{"nodes":[{"id":"New Page 14","title":"New Page 14","x":256.5,"y":142,"type":"central"},{"id":"New Page 12","title":"New Page 12","x":401.5,"y":274,"type":"related"},{"id":"New Page 13","title":"New Page 13","x":558.0320163135298,"y":116.21153019133554,"type":"related"},{"id":"New Page 11","title":"New Page 11","x":642.0429459222053,"y":-1.577671713117681,"type":"related"}],"edges":[{"source":"New Page 14","target":"New Page 12"},{"source":"New Page 14","target":"New Page 13"},{"source":"New Page 13","target":"New Page 11"}]}

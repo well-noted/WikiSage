@@ -1,0 +1,12 @@
+caption: Instruct
+condition: [<targetTiddler>type[]] [<targetTiddler>type[text/vnd.tiddlywiki]] [<targetTiddler>type[text/plain]]
+created: 20250429194208158
+description: Open Instructions Dropdown
+dropdown: $:/plugins/NoteStreams/WikiSage/Instruction-dropdown
+icon: $:/core/images/edit-button
+modified: 20260223010744709
+shortcuts: ((wikisage-))
+tags: $:/tags/EditorToolbar
+title: $:/plugins/NoteStreams/WikiSage/Buttons/Instruct-button
+type: text/vnd.tiddlywiki
+
