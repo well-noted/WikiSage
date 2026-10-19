@@ -1,52 +1,90 @@
 # WikiSage
 
-![image](https://github.com/user-attachments/assets/31e54076-cd69-4c57-a7b9-22a8ad10c654)
+![WikiSage](https://github.com/user-attachments/assets/31e54076-cd69-4c57-a7b9-22a8ad10c654)
 
-WikiSage is an AI companion plugin for [TiddlyWiki](https://tiddlywiki.com) that leverages multiple language models (OpenAI's GPT and o1 models and Anthropic's Claude) to enhance your wiki experience.
+## Your TiddlyWiki's AI companion
+
+An AI companion plugin for [TiddlyWiki](https://tiddlywiki.com). WikiSage lets a language model read and edit your wiki: it can search your tiddlers, read them, create and modify them, and work from your own notes.
+
+**Version 1.1.5** · requires TiddlyWiki 5.3.5 or later · MIT license
+
+**[Live demo](https://well-noted.github.io/WikiSage/)** · [Discussion on Talk TW](https://talk.tiddlywiki.org/t/wikisage-your-tiddlywiki-ai-companion/11301)
+
+## Chat with a model that knows your wiki
+
+![The WikiSage chat widget and key fields](images/chat.png)
+
+*The chat widget with its toolbar: send, clear, model dropdown, image, PDF, audio, and voice input.*
+
+## Models
+
+- OpenAI (GPT and o-series models, DALL-E 3 for images)
+- Anthropic Claude
+- Google Gemini
+- Local models: any server with an OpenAI-compatible endpoint, such as Ollama or LM Studio. You set the Base URL, an optional API key, and whether the model supports tool calling.
+
+Add model names to the model list in the config tab, one per line. PDF analysis uses an Anthropic call.
+
+![The config tab: provider keys, local LLM settings, and the model list](images/config.png)
 
 
-<h2>Features</h2>
-<ul>
-    <li>Multi-model support (ChatGPT and Claude)</li>
-    <li>PDF analysis and processing (requires anthropic)</li> 
-    <li>Image generation (DALL-E 3) and handling</li>
-    <li>Voice interaction (speech-to-text and text-to-speech)</li>
-    <li>Smart content editing with macros</li>
-    <li>Context-aware wiki operations</li>
-    <li>Conversation history management</li>
-    <li>Intelligent search and navigation</li>
-</ul>
+## Features
 
-<h2>Installation</h2>
-<ol>
-    <li>Install <a href="https://github.com/well-noted/WikiSage/raw/main/WikiSage.tid">WikiSage</a> in your TiddlyWiki.</li>
-    <li>Add your API keys:
-        <ul>
-            <li>OpenAI API key in <code>$:/plugins/NoteStreams/WikiSage/openai-api-key</code></li>
-            <li>Anthropic API key in <code>$:/plugins/NoteStreams/WikiSage/anthropic-api-key</code></li>
-            <li>Gemini API key in $:/plugins/NoteStreams/WikiSage/gemini-api-key</li>
-        </ul>
-    </li>
-</ol>
+- Chat with a model that has tools for your wiki: list titles; search content, tags, and fields; read content and fields; create, modify, and rename tiddlers; open and close tiddlers; export tiddlers as JSON, CSV, HTML, or TID; read and revise a system reference; undo actions; scrape a web page
+- Vector search: tiddlers are embedded and indexed in your browser (IndexedDB), with an action widget for similarity search. Embeddings use an OpenAI-compatible endpoint, `text-embedding-3-small` by default
+- PDF analysis
+- Image generation (DALL-E 3)
+- Voice interaction: speech-to-text and text-to-speech
+- Conversation history management
+- Smart content editing with macros
+- Toggles to show or hide each feature's buttons: main page control, beautify tiddler, auto summary, clarify content, code assist, instruction dropdown, and yadda-yadda
 
-<h2>Usage</h2>
-<p>Basic widget usage:</p>
-<pre><code>&lt;$WikiSage/&gt;</code></pre>
+## Everything in one place
 
-<p>With options:</p>
-<pre><code>&lt;$WikiSage tiddlerTitle="Context" tts="yes" adversarial="yes" /&gt;</code></pre>
+![The Features tab of the demo wiki](images/features.png)
 
-<h2>Configuration</h2>
-<p>The plugin supports various other configuration options:</p>
-<ul>
-- model<br>
-- temperature<br>
-- top_p<br>
-- max_tokens<br>
-- presence_penalty<br>
-- frequency_penalty<br>
-- user<br>
-</ul>
+## Widgets
 
-<h2>Note</h2>
-''Important Note:'' While this plugin supports advanced interactions within TiddlyWiki, please be aware of the implications of AI-driven content modifications. The agent cannot delete tiddlers directly but can modify content in potentially destructive ways. The undo functionality is robust and can resolve most issues, but maintaining backups is strongly recommended.<br><br>
+| Widget | Purpose |
+| --- | --- |
+| `<$WikiSage/>` | The chat widget |
+| `<$instruction-chatbox/>` | Instruction chat box |
+| `<$Notebook-widget/>` | Notebook |
+| `<$tiddlywiki-coding-widget/>` | Coding assistant |
+| `<$tiddlywiki-journal-widget/>` | Journal |
+| `<$tiddlywiki-reference-agent-widget/>` | Reference agent |
+| `<$mindmap/>` | Mind map |
+| `<$action-vector-search/>` | Similarity search across tiddlers |
+
+## Installation
+
+1. Download `WikiSage.tid` from this repository and drop it onto your TiddlyWiki, then save and reload.
+2. Open the plugin's config tab and add the key for each provider you use. The keys are stored in these tiddlers:
+   - OpenAI: `$:/plugins/NoteStreams/WikiSage/openai-api-key`
+   - Anthropic: `$:/plugins/NoteStreams/WikiSage/anthropic-api-key`
+   - Gemini: `$:/plugins/NoteStreams/WikiSage/gemini-api-key`
+3. For a local model, set `$:/plugins/NoteStreams/WikiSage/local-llm-url` to the server's base URL (for example `http://localhost:11434`). Do not include `/v1/chat/completions`; it is appended automatically.
+
+Keys are stored in your wiki, so do not publish a wiki that contains them.
+
+## Usage
+
+```
+<$WikiSage/>
+```
+
+With options:
+
+```
+<$WikiSage tiddlerTitle="Context" tts="yes" adversarial="yes"/>
+```
+
+Widget attributes: `tiddlerTitle`, `useCurrentTiddler`, `model`, `temperature`, `history`, `tts`, `adversarial`, `readonly`, `scroll`, `className`, `user`.
+
+## Note
+
+The agent has no tool for deleting tiddlers, but it can modify content in ways that may be destructive. Undo handles most problems. Keep backups.
+
+## History
+
+WikiSage continues the [Expanded ChatGPT Interface](https://talk.tiddlywiki.org/t/expanded-chatgpt-interface) plugin, which was inspired by the [ChatGPT for TiddlyWiki](https://talk.tiddlywiki.org/t/chatgpt-for-tiddlywiki/) plugin by Sttot.
